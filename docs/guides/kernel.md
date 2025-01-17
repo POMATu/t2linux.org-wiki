@@ -26,7 +26,8 @@ mkdir build && cd build
 git clone https://github.com/t2linux/linux-t2-patches patches
 cd patches
 git checkout 0ad2b3913f5484ba8e86b6965f5d88903464261d
-cd ..pkgver=$(curl -sL https://github.com/t2linux/T2-Ubuntu-Kernel/releases/latest/ | grep "<title>Release" | awk -F " " '{print $2}' | cut -d "v" -f 2 | cut -d "-" -f 1)
+cd ..
+pkgver=$(curl -sL https://github.com/t2linux/T2-Ubuntu-Kernel/releases/latest/ | grep "<title>Release" | awk -F " " '{print $2}' | cut -d "v" -f 2 | cut -d "-" -f 1)
 _srcname=linux-${pkgver}
 wget https://www.kernel.org/pub/linux/kernel/v${pkgver//.*}.x/linux-${pkgver}.tar.xz
 tar xf $_srcname.tar.xz
